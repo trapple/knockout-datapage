@@ -1,12 +1,12 @@
 {
-  "name": "datapagejs",
-  "main": "dist/datapage.js",
-  "version": "1.3.2",
-  "homepage": "https://github.com/trapple/datapagejs",
+  "name": "knockout-datapagejs",
+  "main": "dist/knockout-datapage.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/trapple/knockout-datapagejs",
   "authors": [
-    "masuda <masuda@vivi-design.com>"
+    "trapple <trapplejp@gmal.com>"
   ],
-  "description": "simple pagenation object",
+  "description": "simple pagenation object for Knockout.js",
   "license": "MIT",
   "ignore": [
     "**/.*",

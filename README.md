@@ -1,15 +1,15 @@
-DataPage.js - Simple Pagenation Data Object 
+Knockout-DataPage.js - Simple Pagenation Data Object for Knockout.js
 ==================================================
 
-[![Build Status](https://travis-ci.org/trapple/datapagejs.svg?branch=master)](https://travis-ci.org/trapple/datapagejs)
+[![Build Status](https://travis-ci.org/trapple/knockout-datapagejs.svg?branch=master)](https://travis-ci.org/trapple/knockout-datapagejs) fork of DataPage.js
 
 SYNOPSIS
 --------------------------------------
 
 ```
-var pager = new DataPage(total_entries, entries_per_page, current_page, pages_per_pageset);
-pager.first_page();
-pager.last_page();
+var pager = new DataPage(totalEntries, entriesPerPage, currentPage, pagesPerPageset);
+pager.firstPage();
+pager.lastPage();
 pager.first();
 pager.last();
 
@@ -17,10 +17,10 @@ pager.pageset() // 1,2,3,4,5...
 
 
 // default value
-// total_entries || 0
-// entries_per_page || 10
-// current_page || 1
-// pages_per_pageset || 10
+// totalEntries || 0
+// entriesPerPage || 10
+// currentPage || 1
+// pagesPerPageset || 10
 
 ```
 
@@ -30,24 +30,24 @@ INSTALL
 ### Node
 
 ```
-$ npm install datapage
+$ npm install knockout-datapage
 ```
 
 Then:
 
 ```
-var DataPage = require('datapage');
+var DataPage = require('knockout-datapage');
 ```
 
 ### Browser
 
 ```
-bower install datapage
+bower install knockout-datapage
 ```
 Then:
 
 ```
-<script src="datapage.js"></script>
+<script src="knockout-datapage.js"></script>
 ```
 
 METHODS
@@ -56,93 +56,88 @@ METHODS
 
 ```
 new DataPage();
-new DataPage(total_entries, entries_per_page, current_page, pages_per_pageset);
+new DataPage(totalEntries, entriesPerPage, currentPage, pagesPerPageset);
 // default value
-// total_entries || 0
-// entries_per_page || 10
-// current_page || 1
-// pages_per_pageset || 10
+// totalEntries || 0
+// entriesPerPage || 10
+// currentPage || 1
+// pagesPerPageset || 10
 
 ```
 
-### entries_per_page
+### entriesPerPage
 sets or gets the total number of entries per page (which defaults 10)
 
 ```
 // set
-pager.entries_per_page(15);
+pager.entriesPerPage(15);
 // get
-pager.entries_per_page();
+pager.entriesPerPage();
 ```
 
-### current_page
+### currentPage
 ```
 // set
-pager.current_page(2);
+pager.currentPage(2);
 // get
-pager.current_page();
+pager.currentPage();
 ```
 
-### total_entries ( set | get )
+### totalEntries ( set | get )
 
 ```
 // set
-pager.total_entries(300);
+pager.totalEntries(300);
 // get
-pager.pager.total_entries();
+pager.pager.totalEntries();
 ```
 
-### entries_on_this_page
+### entriesOnThisPage
 
 ```
-var total_entries = 300,
-	entries_per_page = 10,
-	current_page = 2,
-	pages_per_pageset = 5;
-var pager = new DataPage(total_entries, entries_per_page, current_page, pages_per_pageset);
-pager.entries_on_this_page(); // returns 10
+var totalEntries = 300,
+	entriesPerPage = 10,
+	currentPage = 2,
+	pagesPerPageset = 5;
+var pager = new DataPage(totalEntries, entriesPerPage, currentPage, pagesPerPageset);
+pager.entriesOnThisPage(); // returns 10
 ```
 
 ```
-var total_entries = 317,
-	entries_per_page = 10,
-	current_page = 32,
-	pages_per_pageset = 5;
-var pager = new DataPage(total_entries, entries_per_page, current_page, pages_per_pageset);
-pager.entries_on_this_page(); // returns 7
+var totalEntries = 317,
+	entriesPerPage = 10,
+	currentPage = 32,
+	pagesPerPageset = 5;
+var pager = new DataPage(totalEntries, entriesPerPage, currentPage, pagesPerPageset);
+pager.entriesOnThisPage(); // returns 7
 ```
 
-### first_page
+### firstPage
 
 always returns 1
 
-### last_page
+### lastPage
 
 ```
 var pager = new DataPage(500, 30, 1); 
-pager.last_page(); returns 17
+pager.lastPage(); returns 17
 ```
 
 ### fast
 
 ### last
 
-### previous_page
+### previousPage
 
-### next_page
+### nextPage
 
-### pages_per_pageset ( set | get )
+### pagesPerPageset ( set | get )
 
 ### pageset
 
-### has_next_pageset
+### hasNextPageset
 
-### has_previous_pageset
-
-SEE ALSO
---------------------------------------
-This software has been ported from [Data::Page](http://search.cpan.org/~lbrocard/Data-Page/lib/Data/Page.pm)
-
+### hasPreviousPageset
 
 COPYRIGHT
 --------------------------------------

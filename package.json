@@ -1,25 +1,42 @@
 {
-  "name": "ko-datapage",
-  "version": "0.0.0",
-  "description": "Simple Pagenation Data Object - Using Knockout.js",
-  "main": "ko-datapage.js",
+  "name": "knockout-datapage",
+  "version": "0.1.0",
+  "description": "Simple Pagenation Data Object for Knockout.js",
+  "main": "knockout-datapage.js",
+  "directories": {
+    "test": "test/"
+  },
   "scripts": {
-    "test": "",
-    "build": ""
+    "test": "mocha --require intelli-espower-loader",
+    "watch": "gulp",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trapple/ko-datapagejs.git"
+    "url": "https://github.com/trapple/knockout-datapagejs.git"
   },
   "author": "trapple",
   "license": "Artistic License",
   "bugs": {
-    "url": "https://github.com/trapple/ko-datapagejs/issues"
+    "url": "https://github.com/trapple/knockout-datapagejs/issues"
   },
-  "homepage": "https://github.com/trapple/ko-datapagejs",
+  "homepage": "https://github.com/trapple/knockout-datapagejs",
   "devDependencies": {
+    "espower-loader": "^0.10.0",
+    "gulp": "^3.8.10",
+    "gulp-jsbeautifier": "0.0.4",
+    "gulp-jshint": "^1.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2",
+    "intelli-espower-loader": "^0.5.0",
+    "knockout": "^3.2.0",
+    "mocha": "^2.1.0",
+    "power-assert": "^0.10.1"
   },
   "keywords": [
-    "pagenation", "pager", "page"
+    "pagenation",
+    "pager",
+    "page"
   ]
 }

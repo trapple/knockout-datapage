@@ -1,1 +1,1 @@
-module.exports = require('./dist/datapage.js');
+module.exports = require('./dist/knockout-datapage.js');
