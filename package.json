@@ -30,7 +30,6 @@
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.0.2",
     "intelli-espower-loader": "^0.5.0",
-    "knockout": "^3.2.0",
     "mocha": "^2.1.0",
     "power-assert": "^0.10.1"
   },
@@ -38,5 +37,8 @@
     "pagenation",
     "pager",
     "page"
-  ]
+  ],
+  "dependencies": {
+    "knockout": "^3.2.0"
+  }
 }
