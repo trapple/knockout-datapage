@@ -1,0 +1,25 @@
+{
+  "name": "ko-datapage",
+  "version": "0.0.0",
+  "description": "Simple Pagenation Data Object - Using Knockout.js",
+  "main": "ko-datapage.js",
+  "scripts": {
+    "test": "",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trapple/ko-datapagejs.git"
+  },
+  "author": "trapple",
+  "license": "Artistic License",
+  "bugs": {
+    "url": "https://github.com/trapple/ko-datapagejs/issues"
+  },
+  "homepage": "https://github.com/trapple/ko-datapagejs",
+  "devDependencies": {
+  },
+  "keywords": [
+    "pagenation", "pager", "page"
+  ]
+}
