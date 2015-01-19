@@ -4,24 +4,21 @@ var jshint = require('gulp-jshint');
 var jsbeautifier = require('gulp-jsbeautifier');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var header = require('gulp-header');
 
-gulp.task('build', function() {
-  return gulp.src('src/*.js')
-    .pipe(transform(function(filename) {
-      return browserify(filename).bundle();
-    }))
-    .pipe(gulp.dest('dist/'))
-    .pipe(uglify())
-    .pipe(rename({
-      extname: ".min.js"
-    }))
-    .pipe(gulp.dest('dist/'));
-});
+var package = require('./package.json');
+var banner = ['/*',
+' * <%= package.name %>',
+' * <%= package.description %>',
+' * <%= package.repository.url %>',
+' * Copyright 2014 <%= package.author %>',
+' * Version: <%= package.version %>',
+' */'].join("\n") + "\n";
 
 gulp.task('jshint', function() {
-return gulp.src('src/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+  return gulp.src('src/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'));
 });
 
 gulp.task('mocha', function() {
@@ -38,7 +35,8 @@ gulp.task('default', function() {
 });
 
 gulp.task('build', function () {
-  return gulp.src('src/*.js')
+  return gulp.src('src/knockout-datapage.js')
+    .pipe(header(banner, {package: package}))
     .pipe(gulp.dest('dist/'))
     .pipe(uglify())
     .pipe(rename({
