@@ -1,7 +1,7 @@
 {
   "name": "knockout-datapagejs",
   "main": "dist/knockout-datapage.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/trapple/knockout-datapagejs",
   "authors": [
     "trapple <trapplejp@gmal.com>"

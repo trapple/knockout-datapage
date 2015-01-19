@@ -27,9 +27,7 @@
         return this._totalEntries(); 
       },
       write: function (val) {
-        if (val !== undefined){
-          this._totalEntries(parseUnsignedInt(val));
-        }
+        this._totalEntries(parseUnsignedInt(val));
       },
       owner: this
     });
@@ -43,9 +41,7 @@
         return this._entriesPerPage();
       },
       write: function (val) {
-        if (val !== undefined) {
-          this._entriesPerPage(parseVal(val));
-        }
+        this._entriesPerPage(parseVal(val));
       },
       owner: this
     });
@@ -59,12 +55,10 @@
         return this._currentPage();
       },
       write: function (val) {
-        if (val !== undefined) {
-          val = parseVal(val);
-          this._currentPage(val);
-          if (val > this.lastPage()){
-            this._currentPage(this.lastPage());
-          }
+        val = parseVal(val);
+        this._currentPage(val);
+        if (val > this.lastPage()){
+          this._currentPage(this.lastPage());
         }
       },
       owner: this
@@ -76,15 +70,14 @@
      */
     this.pagesPerPageset = ko.pureComputed({
       read: function () {
-        return this._pagesPerPageset();
+        if (this._pagesPerPageset() > this.lastPage()){
+          return this.lastPage();
+        }else{
+          return this._pagesPerPageset();
+        }
       },
       write: function (val) {
-        if (val !== undefined) {
-          this._pagesPerPageset(parseVal(val));
-          if (this._pagesPerPageset() > this.lastPage()){
-            this._pagesPerPageset(this.lastPage());
-          }
-        }
+        this._pagesPerPageset(parseVal(val));
       },
       owner: this
     });

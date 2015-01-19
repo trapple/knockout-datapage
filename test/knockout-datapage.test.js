@@ -124,15 +124,15 @@ describe("DataPage", function() {
 
     pager.totalEntries(600);
     pager.entriesPerPage(30);
-    assert.equal( pager.lastPage(),20);
+    assert.equal(pager.lastPage(), 20);
 
     pager.totalEntries(0);
     pager.entriesPerPage(30);
-    assert.equal( pager.lastPage(), 1);
-    
+    assert.equal(pager.lastPage(), 1);
+
     pager.totalEntries(3);
     pager.entriesPerPage(30);
-    assert.equal( pager.lastPage(),1);
+    assert.equal(pager.lastPage(), 1);
   });
 
   it('first', function() {
@@ -258,6 +258,35 @@ describe("DataPage", function() {
     assert(pager.hasPreviousPageset() === true);
     pager.currentPage(6);
     assert(pager.hasPreviousPageset() === false);
+
+  });
+
+  it('change value', function() {
+    var pager = new DataPage();
+    assert.equal(pager.totalEntries(), 0);
+    assert.equal(pager.entriesPerPage(), 10);
+    assert.equal(pager.currentPage(), 1);
+    assert.equal(pager.lastPage(), 1);
+    assert.equal(pager.pagesPerPageset(), 1);
+
+    pager.pagesPerPageset(5);
+    assert.equal(pager.totalEntries(), 0);
+    assert.equal(pager.entriesPerPage(), 10);
+    assert.equal(pager.currentPage(), 1);
+    assert.equal(pager.pagesPerPageset(), 1);
+
+    pager.totalEntries(500);
+    assert.equal(pager.pagesPerPageset(), 5);
+    assert.deepEqual(pager.pageset(), [1, 2, 3, 4, 5]);
+
+    pager.pagesPerPageset(3);
+    assert.equal(pager.pagesPerPageset(), 3);
+    assert.deepEqual(pager.pageset(), [1, 2, 3]);
+
+    pager.currentPage(3);
+    assert.equal(pager.currentPage(), 3);
+    assert.equal(pager.pagesPerPageset(), 3);
+    assert.deepEqual(pager.pageset(), [2, 3, 4]);
 
   });
 });

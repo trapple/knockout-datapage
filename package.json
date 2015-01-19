@@ -1,6 +1,6 @@
 {
   "name": "knockout-datapage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple Pagenation Data Object for Knockout.js",
   "main": "knockout-datapage.js",
   "directories": {
